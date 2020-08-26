@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/HttpSample/Tests/HttpSample1.bwt">
+  <ProcessNode Id="httpsample.Process" Name="httpsample.Process" ModelType="BW" moduleName="HttpSample">
+    <Assertion Id="e01e9fff-4f55-45c0-8fe9-0d8f70dbf3a1" Name="InvokeRESTAPI" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression></Expression>
+      <OriginalExpression></OriginalExpression>
+    </Assertion>
+  </ProcessNode>
+</emulation:EmulationData>

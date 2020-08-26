@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/v2/T1554100131322Converted/JsonSchema" xmlns:tns="/v2/T1554100131322Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="UserArray" type="tns:UserArray"/>
+    <xs:complexType name="UserArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="User" type="tns:User"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="Tag" type="tns:Tag"/>
+    <xs:complexType name="Tag">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="Category" type="tns:Category"/>
+    <xs:complexType name="Category">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="Order" type="tns:Order"/>
+    <xs:complexType name="Order">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="petId" type="xs:long"/>
+            <xs:element minOccurs="0" name="quantity" type="xs:int"/>
+            <xs:element minOccurs="0" name="shipDate" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="status">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="placed"/>
+                        <xs:enumeration value="approved"/>
+                        <xs:enumeration value="delivered"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="complete" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="User" type="tns:User"/>
+    <xs:complexType name="User">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="username" type="xs:string"/>
+            <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+            <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="password" type="xs:string"/>
+            <xs:element minOccurs="0" name="phone" type="xs:string"/>
+            <xs:element minOccurs="0" name="userStatus" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PetArray" type="tns:PetArray"/>
+    <xs:complexType name="PetArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Pet" type="tns:Pet"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ApiResponse" type="tns:ApiResponse"/>
+    <xs:complexType name="ApiResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="code" type="xs:int"/>
+            <xs:element minOccurs="0" name="type" type="xs:string"/>
+            <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="Pet" type="tns:Pet"/>
+    <xs:complexType name="Pet">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="category" type="tns:Category"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" name="photoUrls" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="tags" type="tns:Tag"/>
+            <xs:element minOccurs="0" name="status">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="available"/>
+                        <xs:enumeration value="pending"/>
+                        <xs:enumeration value="sold"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="stringArray" type="tns:stringArray"/>
+    <xs:complexType name="stringArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="string" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

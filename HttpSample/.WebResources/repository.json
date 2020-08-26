@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/httpsample.RestProcess-Resource.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/httpsample.ServiceProcess-Resource12.json",
+            "type": "generated"
+        }
+    ]
+}

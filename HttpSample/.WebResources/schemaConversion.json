@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/HttpSample/Service Descriptors/httpsample.ServiceProcess-Resource12.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/schema/1553842784551"
+    },
+    {
+        "jsonSchemaLocation": "/HttpSample/Service Descriptors/v2/swagger.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/v2/T1554100131322Converted/JsonSchema"
+    }
+]}
