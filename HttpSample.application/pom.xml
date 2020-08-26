@@ -12,10 +12,10 @@
   <packaging>bwear</packaging>
   <properties>
     <skipTests>false</skipTests>
-    <project.type>Docker</project.type>
     <bw.Home></bw.Home>
-    <docker.property.file>docker-dev.properties</docker.property.file>
+    <project.type>Docker</project.type>
     <failIfNoTests>false</failIfNoTests>
+    <docker.property.file>docker-dev.properties</docker.property.file>
     <tibco.Home></tibco.Home>
   </properties>
   <build>
