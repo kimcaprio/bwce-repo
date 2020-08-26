@@ -1,0 +1,25 @@
+metadata:
+  name: bwce-sample
+kind: Deployment
+spec:
+  template:
+    metadata:
+      name: bwce-sample
+      namespace: default
+      labels:
+        container: bwce-sample
+        project: bwce-sample
+    spec:
+      containers:
+      - image: localhost:5000/httpsample
+        imagePullPolicy: Always
+        name: bwce-sample
+        env: []
+        ports:
+        - containerPort: 8080
+  replicas: 1
+  selector:
+    container: bwce-sample
+    provider: fabric8
+    project: bwce-sample
+    group: com.tibco.bw

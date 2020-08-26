@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: HttpSample.application
+    provider: fabric8
+    version: 1.0.0-SNAPSHOT
+    group: com.tibco.bw
+  name: bwce-sample
+  namespace: default
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: HttpSample.application
+      provider: fabric8
+      group: com.tibco.bw
+  template:
+    metadata:
+      labels:
+        container: bwce-sample
+        project: bwce-sample
+        app: HttpSample.application
+        provider: fabric8
+        version: 1.0.0-SNAPSHOT
+        group: com.tibco.bw
+      name: bwce-sample
+      namespace: default
+    spec:
+      containers:
+      - image: localhost:5000/httpsample
+        imagePullPolicy: Always
+        name: bwce-sample
+        ports:
+        - containerPort: 8080
+          name: http

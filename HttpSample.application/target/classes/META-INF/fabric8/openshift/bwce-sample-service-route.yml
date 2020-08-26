@@ -1,0 +1,19 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    container: bwce-sample
+    provider: fabric8
+    project: bwce-sample
+    group: com.tibco.bw
+    app: HttpSample.application
+    version: 1.0.0-SNAPSHOT
+  name: bwce-sample-service
+  namespace: default
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: bwce-sample-service
