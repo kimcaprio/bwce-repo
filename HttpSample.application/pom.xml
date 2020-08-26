@@ -12,10 +12,11 @@
   <packaging>bwear</packaging>
   <properties>
     <skipTests>false</skipTests>
-    <bw.Home></bw.Home>
     <project.type>Docker</project.type>
-    <failIfNoTests>false</failIfNoTests>
+    <bw.Home></bw.Home>
+    <k8s.property.file>k8s-dev.properties</k8s.property.file>
     <docker.property.file>docker-dev.properties</docker.property.file>
+    <failIfNoTests>false</failIfNoTests>
     <tibco.Home></tibco.Home>
   </properties>
   <build>
@@ -33,15 +34,8 @@
         <configuration>
           <files>
             <file>${docker.property.file}</file>
+            <file>${k8s.property.file}</file>
           </files>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>io.fabric8</groupId>
-        <artifactId>fabric8-maven-plugin</artifactId>
-        <version>3.5.41</version>
-        <configuration>
-          <skip>false</skip>
         </configuration>
       </plugin>
       <plugin>
@@ -76,6 +70,14 @@
               </run>
             </image>
           </images>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId>
+        <version>3.5.41</version>
+        <configuration>
+          <skip>false</skip>
         </configuration>
       </plugin>
     </plugins>
